@@ -1,10 +1,10 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-let host = process.argv[2] || 'localhost';
-let port = process.argv[3] || 3000;
+let host = process.argv[3] || 'localhost';
+let port = process.argv[2] || 3000;
 const httpServer = http.createServer(requestHandler);
-httpServer.listen(host, port, () => {console.log(`server is listening. Host/port: ${host}:${port}`)});
+httpServer.listen(port, host,  () => {console.log(`server is listening. Listen Host/port: ${host}:${port}`)});
 
 function requestHandler(req, res){
   if(req.url === '/'){
